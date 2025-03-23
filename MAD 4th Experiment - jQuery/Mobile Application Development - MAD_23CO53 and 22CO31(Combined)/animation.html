@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)file:///C:/Users/student/Desktop/animation.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All jQuery Animations in One</title>
+  <script src="./animation_files/jquery-3.6.0.min.js.download"></script>
+  <script src="./animation_files/jquery-ui.min.js.download"></script>
+  <style>
+    /* Basic Styling for the elements */
+    #fadeElement, #slideElement, #bounceElement, #animateBox, #shakeElement {
+      width: 200px;
+      height: 200px;
+      margin: 20px auto;
+      text-align: center;
+      color: white;
+      font-size: 20px;
+      line-height: 200px;
+    }
+
+    #fadeElement { background-color: #3498db; }
+    #slideElement { background-color: #e74c3c; display: none; }
+    #bounceElement { background-color: #2ecc71; }
+    #animateBox { background-color: #9b59b6; }
+    #shakeElement { background-color: #f39c12; }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Buttons and Animations -->
+<button id="fadeInBtn">Fade In</button>
+<button id="fadeOutBtn">Fade Out</button>
+<div id="fadeElement" style="">Fade</div>
+
+<button id="slideDownBtn">Slide Down</button>
+<button id="slideUpBtn">Slide Up</button>
+<div id="slideElement" style="display: block;">Slide</div>
+
+<button id="bounceBtn">Bounce</button>
+<div id="bounceElement" style="">Bounce</div>
+
+<button id="animateBtn">Animate</button>
+<div id="animateBox" style="width: 300px; height: 300px; opacity: 0.5;">Animate</div>
+
+<button id="shakeBtn">Shake</button>
+<div id="shakeElement" style="">Shake</div>
+
+<script>
+  $(document).ready(function(){
+    
+    // Fade In / Fade Out
+    $("#fadeInBtn").click(function(){
+      $("#fadeElement").fadeIn(1000);
+    });
+    
+    $("#fadeOutBtn").click(function(){
+      $("#fadeElement").fadeOut(1000);
+    });
+
+    // Slide Up / Slide Down
+    $("#slideDownBtn").click(function(){
+      $("#slideElement").slideDown(800);
+    });
+
+    $("#slideUpBtn").click(function(){
+      $("#slideElement").slideUp(800);
+    });
+
+    // Bounce Effect
+    $("#bounceBtn").click(function(){
+      $("#bounceElement").effect("bounce", {times: 3}, 1000);
+    });
+
+    // Animate CSS Properties (Width, Height, Opacity)
+    $("#animateBtn").click(function(){
+      $("#animateBox").animate({
+        width: "300px",
+        height: "300px",
+        opacity: 0.5
+      }, 1500);
+    });
+
+    // Shake Effect
+    $("#shakeBtn").click(function(){
+      $("#shakeElement").effect("shake", {times: 4, distance: 10}, 800);
+    });
+
+  });
+</script>
+
+
+
+</body></html>

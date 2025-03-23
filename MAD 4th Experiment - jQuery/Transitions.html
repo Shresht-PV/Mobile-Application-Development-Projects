@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>jQuery Transitions</title>
+	<style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        /* Fade In and Fade Out */
+        .fade-element {
+            display: none;
+            background-color: lightblue;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        /* Slide Up and Slide Down */
+        .slide-element {
+            background-color: lightgreen;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 10px 0;
+            display: none;
+        }
+        /* Toggle Class Animation */
+        .toggle-element {
+            background-color: lightcoral;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 10px 0;
+            transition: background-color 0.5s, transform 0.3s;
+        }
+        .toggle-style {
+            background-color: lightblue;
+            transform: scale(1.2);
+        }
+        /* Animate Element (Move and Resize) */
+        .animate-box {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: relative;
+            margin: 10px 0;
+        }
+        /* Hover Effect */
+        .hover-box {
+            width: 200px;
+            height: 100px;
+            background-color: purple;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            border-radius: 10px;
+            margin: 10px 0;
+            transition: all 0.3s ease-in-out;
+        }
+        .hover-box:hover {
+            background-color: gold;
+            transform: rotate(10deg);
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery Transitions Demo</h1>
+    <!-- Fade In and Fade Out -->
+    <button id="fadeBtn">Toggle Fade</button>
+    <div id="fadeElement" class="fade-element">
+        This is a fading element.
+    </div>
+    <!-- Slide Up and Slide Down -->
+    <button id="slideBtn">Slide Toggle</button>
+    <div id="slideElement" class="slide-element">
+        This is a sliding element.
+    </div>
+    <!-- Toggle Class Animation -->
+    <button id="toggleBtn">Toggle Class</button>
+    <div id="toggleElement" class="toggle-element">
+        Click to toggle the style!
+    </div>
+    <!-- Animate Element (Move and Resize) -->
+    <button id="animateBtn">Animate Box</button>
+    <div id="animateBox" class="animate-box"></div>
+    <!-- Hover Effect -->
+    <div class="hover-box">
+        Hover over me!
+    </div>
+	 <!-- jQuery -->
+   <script>
+        $(document).ready(function() {
+            // Fade In and Fade Out
+            $("#fadeBtn").click(function() {
+                $("#fadeElement").fadeToggle();
+            });
+
+            // Slide Up and Slide Down
+            $("#slideBtn").click(function() {
+                $("#slideElement").slideToggle();
+            });
+
+            // Toggle Class Animation
+            $("#toggleBtn").click(function() {
+                $("#toggleElement").toggleClass("toggle-style");
+            });
+
+            // Animate Element (Move and Resize)
+            $("#animateBtn").click(function() {
+                $("#animateBox").animate({
+                    width: "200px",
+                    height: "200px",
+                    left: "100px"
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>

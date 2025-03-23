@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        #fadeBox, #slideBox, #colorBox {
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            text-align: center;
+            line-height: 200px;
+            color: white;
+            font-size: 18px;
+            border-radius: 10px;
+        }
+
+        #fadeBox {
+            background-color: #3498db;
+        }
+
+        #slideBox {
+            background-color: #2ecc71;
+            display: none; /* Initially hidden for slide effect */
+        }
+
+        #colorBox {
+            background-color: #e74c3c;
+            transition: background-color 1s ease; /* Smooth color transition */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            background-color: #34495e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>CSS and jQuery Transitions</h2>
+
+    <!-- Buttons to trigger transitions -->
+    <button id="fadeInBtn">Fade In</button>
+    <button id="fadeOutBtn">Fade Out</button>
+    <button id="slideDownBtn">Slide Down</button>
+    <button id="slideUpBtn">Slide Up</button>
+    <button id="colorChangeBtn">Change Color</button>
+
+    <!-- Boxes for transitions -->
+    <div id="fadeBox">Fade Box</div>
+    <div id="slideBox">Slide Box</div>
+    <div id="colorBox">Color Box</div>
+
+    <script>
+        $(document).ready(function() {
+            // Fade In Transition
+            $("#fadeInBtn").click(function() {
+                $("#fadeBox").fadeIn(1000); // Fade in with 1 second duration
+            });
+
+            // Fade Out Transition
+            $("#fadeOutBtn").click(function() {
+                $("#fadeBox").fadeOut(1000); // Fade out with 1 second duration
+            });
+
+            // Slide Down Transition
+            $("#slideDownBtn").click(function() {
+                $("#slideBox").slideDown(1000); // Slide down with 1 second duration
+            });
+
+            // Slide Up Transition
+            $("#slideUpBtn").click(function() {
+                $("#slideBox").slideUp(1000); // Slide up with 1 second duration
+            });
+
+            // Color Change Transition (Using CSS transition for smooth color change)
+            $("#colorChangeBtn").click(function() {
+                $("#colorBox").toggleClass("newColor");
+            });
+        });
+    </script>
+
+    <style>
+        .newColor {
+            background-color: #f39c12; /* New color after transition */
+        }
+    </style>
+
+</body>
+</html>

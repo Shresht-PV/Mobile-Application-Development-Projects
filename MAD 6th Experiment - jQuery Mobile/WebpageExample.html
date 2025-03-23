@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery Mobile Example</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+    <!-- Home Page -->
+    <div data-role="page" id="home">
+        <div data-role="header">
+            <h1>Home Page</h1>
+        </div>
+        <div data-role="content">
+            <p>Welcome to the jQuery Mobile Webpage.</p>
+            <a href="#login" data-role="button">Go to Login</a>
+        </div>
+        <div data-role="footer">
+            <h4>© 2025 My Website</h4>
+        </div>
+    </div>
+
+    <!-- Login Page -->
+    <div data-role="page" id="login">
+        <div data-role="header">
+            <h1>Login</h1>
+        </div>
+        <div data-role="content">
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username">
+                
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password">
+                
+                <button type="submit" data-role="button">Login</button>
+            </form>
+        </div>
+        <div data-role="footer">
+            <a href="#home" data-role="button">Back to Home</a>
+        </div>
+    </div>
+
+</body>
+</html>
